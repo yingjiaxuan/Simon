@@ -16,7 +16,8 @@
 * [写在最后](#写在最后)
 
 
-##主要功能
+## 主要功能
+
 本程序具有如下几个特点：
 
 1. 医疗领域字符串专项分词——邮政编码（中国）、科室信息、医院名称、所在地等。
@@ -26,7 +27,8 @@
 5. 分词处理统计效率在i5-7300HQ+单8g内存条件下大约为20条/分钟
 6. 并行化模块处于测试阶段，暂不推荐使用
 
-##使用及运行
+## 使用及运行
+
 - 运行本程序必须安装pkuseg模块
 - pkuseg目前**仅支持python3**
 - **为了获得好的效果和速度，强烈建议大家通过pip install更新到目前的最新版本**
@@ -66,7 +68,7 @@
 
 
 
-##样例及结果
+## 样例及结果
 以下选择两个典型原数据展示输出结果：
 
 输入：
@@ -83,12 +85,12 @@
 |无    |2|  无 | 推断为：南京   | 风湿免疫科 |南京大学医学院附属鼓楼医院|
 |230001|1|安徽|合肥 |风湿免疫科|安徽医科大学附属省立医院 |
 
-##详细入口参数及使用方法
+## 详细入口参数及使用方法
 
-###代码解析——基于文件[Fun_1.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_1.py)
+### 代码解析——基于文件[Fun_1.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_1.py)
 以下代码示例适用于python交互式环境及pycharm编译器。
 
-####测试方法1——顺序测试（源文件388-389行）
+#### 测试方法1——顺序测试（源文件388-389行）
 ```python3
 i = 80 # 起始行
 while i < 84:  # 终结行
@@ -102,7 +104,7 @@ while i < 84:  # 终结行
 workbook_goal.close()
 print('Finish_Processing')
 ```
-####测试方法2——随机测试（源文件401-402行）
+#### 测试方法2——随机测试（源文件401-402行）
 ```python3
 loop = 1
 while loop <= 20:  # 修改这里修改测试次数
@@ -117,7 +119,7 @@ while loop <= 20:  # 修改这里修改测试次数
 workbook_goal.close()
 print('Finish_Processing')
 ```
-####字符串处理主方法（源文件290-357行）
+#### 字符串处理主方法（源文件290-357行）
 ```python3
 func_Processor(dict_Postal_Code_City, dict_Postal_Code_Province, t, num, name, worksheet, loop=0)
 	dict_Postal_Code_City		邮编——市/直辖市区映射字典表（基于输入邮编文件路径生成）
@@ -127,8 +129,8 @@ func_Processor(dict_Postal_Code_City, dict_Postal_Code_Province, t, num, name, w
 	name                            姓名（基于待处理字符串所在行号name列生成）
 	worksheet                       目标文件路径（基于输入的输出文件路径生成）
 	loop=0                          默认0，当随机测试时，置为1
-```
-####调试方法及输入格式
+``` 
+#### 调试方法及输入格式
 ```python3
 dict_Postal_Code_City, dict_Postal_Code_Province = func_Get_Postal_Code_Dict_2('C:\Personal_File\DiskF\GSK_Intern\Gsk_Inf\Postal_Code.xlsx')
 workbook_source = xlrd.open_workbook("C:\Personal_File\DiskF\GSK_Intern\Address.xlsx")
@@ -144,15 +146,16 @@ workbook_goal = xlsxwriter.Workbook('C:\Personal_File\DiskF\GSK_Intern\Gsk_Inf\A
 2. 批量处理时，应当注释掉随机测试模块，使用顺序测试模块，并将范围定为0~line_max
 3. 文档中剩余功能性方法已全部注释，可通过文字了解功能，后期可能会更新一个文档说明各个方法的机理
 （目前修改以上内容即可进行处理及功能应用了）
-##并行化、改进及维护
-###1.并行化
+
+## 并行化、改进及维护
+### 1.并行化
 目前暂时不建议使用并行化处理，由于应用环境——windows系统，并行处理时，进程创建成本较高，相关脚本开发尚未通过测试，完成后会更新本文档
-###2.改进
+### 2.改进
 源文件（[Fun_1.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_1.py))中对于需要增加与否停用词等已做注释，后期也会更新本文档进行详细说明
-###3.维护
+### 3.维护
 不建议修改除文件路径，停用词以外的任何内容，以免造成不可估计的逻辑错误
 
-##文件说明
+## 文件说明
 1. [Fun_1.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_1.py)
 字符串处理主函数，程序完整功能及应用
 2. [Fun_2_Excl.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_2_Excl.py)
@@ -172,7 +175,7 @@ pkuseg小范围分词单独测试
 9. [Actual_Demo_1.xlsx](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/Excel/Actual_Demo_1.xlsx)
 基于7的输出结果
 
-##写在最后
+## 写在最后
 此为本程序README文档的1.0版本，后续会持续更新，下次更新预计解决：
 程序内全部方法的说明
 
