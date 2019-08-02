@@ -171,6 +171,8 @@ pkuseg小范围分词单独测试
 邮编映射表
 9. [Actual_Demo_1.xlsx](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/Excel/Actual_Demo_1.xlsx)
 基于7的输出结果
+10. [requirements.txt](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/requirements.txt)
+python版本库文件，python3以上版本直接装载即可
 
 ##写在最后
 此为本程序README文档的1.0版本，后续会持续更新，下次更新预计解决：
