@@ -1,5 +1,4 @@
-# 基于pkuseg的GSK医疗领域中文分词[**(此处应有链接)**](link)
-
+# 基于pkuseg的GSK医疗领域中文分词
 此程序相对偏脚本，以下将分几个方面进行叙述
 
 
@@ -86,7 +85,7 @@
 
 ##详细入口参数及使用方法
 
-###代码解析——基于文件[Fun_1.py](Link)
+###代码解析——基于文件[Fun_1.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_1.py)
 以下代码示例适用于python交互式环境及pycharm编译器。
 
 ####测试方法1——顺序测试（源文件388-389行）
@@ -141,7 +140,7 @@ workbook_goal = xlsxwriter.Workbook('C:\Personal_File\DiskF\GSK_Intern\Gsk_Inf\A
     目标输出文件路径（.xlsx）
 ```
 
-1. [邮编映射表参考](link),[输入文件参考](link)（输入文件必须第一列为姓名，第二列为待处理字符串，否则无法识别）
+1. [邮编映射表参考](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/Excel/Postal_Code_Data.xlsx),[输入文件参考](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/Excel/Address.xlsx)（输入文件必须第一列为姓名，第二列为待处理字符串，否则无法识别）
 2. 批量处理时，应当注释掉随机测试模块，使用顺序测试模块，并将范围定为0~line_max
 3. 文档中剩余功能性方法已全部注释，可通过文字了解功能，后期可能会更新一个文档说明各个方法的机理
 （目前修改以上内容即可进行处理及功能应用了）
@@ -149,34 +148,35 @@ workbook_goal = xlsxwriter.Workbook('C:\Personal_File\DiskF\GSK_Intern\Gsk_Inf\A
 ###1.并行化
 目前暂时不建议使用并行化处理，由于应用环境——windows系统，并行处理时，进程创建成本较高，相关脚本开发尚未通过测试，完成后会更新本文档
 ###2.改进
-源文件（[Fun_1.py](link)）中对于需要增加与否停用词等已做注释，后期也会更新本文档进行详细说明
+源文件（[Fun_1.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_1.py))中对于需要增加与否停用词等已做注释，后期也会更新本文档进行详细说明
 ###3.维护
 不建议修改除文件路径，停用词以外的任何内容，以免造成不可估计的逻辑错误
 
 ##文件说明
-1. [Fun_1.py](link)
+1. [Fun_1.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_1.py)
 字符串处理主函数，程序完整功能及应用
-2. [Fun_2_Excl.py](link)
+2. [Fun_2_Excl.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_2_Excl.py)
 Excel文档相关处理方法参考
-3. [Fun_3.py](link)
+3. [Fun_3.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_3.py)
 pkuseg小范围分词单独测试
-4. [fun_4.py](link)
+4. [fun_4.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/fun_4.py)
 并行模块开发（待优化，目前处于无法运行状态）
-5. [Fun_5.py](link)
+5. [Fun_5.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_5.py)
 并行原理模块参考
-6. [Fun_6.py](link)
+6. [Fun_6.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_6.py)
 进程池方法实现并行方法测试
-7. [Address.xlsx](link)
+7. [Address.xlsx](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/Excel/Address.xlsx)
 待处理数据
-8. [Postal_Code_Data.xlsx](link)
+8. [Postal_Code_Data.xlsx](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/Excel/Postal_Code_Data.xlsx)
 邮编映射表
-9. [Actual_Demo_1.xlsx](link)
+9. [Actual_Demo_1.xlsx](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/Excel/Actual_Demo_1.xlsx)
 基于7的输出结果
 
 ##写在最后
 此为本程序README文档的1.0版本，后续会持续更新，下次更新预计解决：
 程序内全部方法的说明
 
+有任何关于本程序的问题及建议，欢迎将邮件发至：[*yingjiaxuan123@163.com*](link)
 
 
 
