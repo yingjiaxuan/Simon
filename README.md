@@ -17,7 +17,7 @@
 * [写在最后](#写在最后)
 
 
-##主要功能
+## 主要功能
 本程序具有如下几个特点：
 
 1. 医疗领域字符串专项分词——邮政编码（中国）、科室信息、医院名称、所在地等。
@@ -27,7 +27,7 @@
 5. 分词处理统计效率在i5-7300HQ+单8g内存条件下大约为20条/分钟
 6. 并行化模块处于测试阶段，暂不推荐使用
 
-##使用及运行
+## 使用及运行
 - 运行本程序必须安装pkuseg模块
 - pkuseg目前**仅支持python3**
 - **为了获得好的效果和速度，强烈建议大家通过pip install更新到目前的最新版本**
@@ -67,7 +67,7 @@
 
 
 
-##样例及结果
+## 样例及结果
 以下选择两个典型原数据展示输出结果：
 
 输入：
@@ -84,12 +84,12 @@
 |无    |2|  无 | 推断为：南京   | 风湿免疫科 |南京大学医学院附属鼓楼医院|
 |230001|1|安徽|合肥 |风湿免疫科|安徽医科大学附属省立医院 |
 
-##详细入口参数及使用方法
+## 详细入口参数及使用方法
 
-###代码解析——基于文件[Fun_1.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_1.py)
+### 代码解析——基于文件[Fun_1.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_1.py)
 以下代码示例适用于python交互式环境及pycharm编译器。
 
-####测试方法1——顺序测试（源文件388-389行）
+#### 测试方法1——顺序测试（源文件388-389行）
 ```python3
 i = 80 # 起始行
 while i < 84:  # 终结行
@@ -103,7 +103,7 @@ while i < 84:  # 终结行
 workbook_goal.close()
 print('Finish_Processing')
 ```
-####测试方法2——随机测试（源文件401-402行）
+#### 测试方法2——随机测试（源文件401-402行）
 ```python3
 loop = 1
 while loop <= 20:  # 修改这里修改测试次数
@@ -118,7 +118,7 @@ while loop <= 20:  # 修改这里修改测试次数
 workbook_goal.close()
 print('Finish_Processing')
 ```
-####字符串处理主方法（源文件290-357行）
+#### 字符串处理主方法（源文件290-357行）
 ```python3
 func_Processor(dict_Postal_Code_City, dict_Postal_Code_Province, t, num, name, worksheet, loop=0)
 	dict_Postal_Code_City		邮编——市/直辖市区映射字典表（基于输入邮编文件路径生成）
@@ -129,7 +129,7 @@ func_Processor(dict_Postal_Code_City, dict_Postal_Code_Province, t, num, name, w
 	worksheet                       目标文件路径（基于输入的输出文件路径生成）
 	loop=0                          默认0，当随机测试时，置为1
 ```
-####调试方法及输入格式
+#### 调试方法及输入格式
 ```python3
 dict_Postal_Code_City, dict_Postal_Code_Province = func_Get_Postal_Code_Dict_2('C:\Personal_File\DiskF\GSK_Intern\Gsk_Inf\Postal_Code.xlsx')
 workbook_source = xlrd.open_workbook("C:\Personal_File\DiskF\GSK_Intern\Address.xlsx")
@@ -147,7 +147,7 @@ workbook_goal = xlsxwriter.Workbook('C:\Personal_File\DiskF\GSK_Intern\Gsk_Inf\A
 （目前修改以上内容即可进行处理及功能应用了）
 
 ## 其余方法说明
-###1.func_Get_Postal_Code
+### 1.func_Get_Postal_Code
 ```python3
 # 提取邮政编码及剩余字符串，入口参数为待处理字符串，返回剩余字符串及提取出的邮编
 def func_Get_Postal_Code(t):
@@ -160,7 +160,7 @@ def func_Get_Postal_Code(t):
     return s_re, m.group(0)
 
 ```
-###2.func_Delete_Comma
+### 2.func_Delete_Comma
 ```python3
 # 去除字符以外的全部符号，入口参数为字符串，出口参数为处理后的字符串
 def func_Delete_Comma(line):
@@ -169,7 +169,7 @@ def func_Delete_Comma(line):
     return line
 
 ```
-###3.func_Get_Postal_Code_Dict_2
+### 3.func_Get_Postal_Code_Dict_2
 ```python3
 # 构建邮政编码映射表，入口参数为邮编数据表，出口参数为一级映射及二级映射表——建议对结果进行序列化本地存储
 def func_Get_Postal_Code_Dict_2(file_url):
@@ -199,7 +199,7 @@ def func_Get_Postal_Code_Dict_2(file_url):
     print('')
     return dict_Postal_Code_City, dict_Postal_Code_Province
 ```
-###4.Pro_Fin_ADD
+### 4.Pro_Fin_ADD
 ```python3
 # 处理句末出现的地址信息变为GG——未来会加入处理句首，入口参数为待处理list，出口参数为处理后list
 # 建议将补丁部分生成本地字典导入分词方法
@@ -233,7 +233,7 @@ def Pro_Fin_ADD(text):
 
     return text
 ```
-###5.func_Get_An_City
+### 5.func_Get_An_City
 ```python3
 # 在邮编无法提取城市的情况下，进行二次城市提取，标明为参考信息，此时句末的地址信息还没洗掉，标点符号已经全部去除
 def func_Get_An_City(text, flag_city, worksheet, num_1):
@@ -256,7 +256,7 @@ def func_Get_An_City(text, flag_city, worksheet, num_1):
         print("")
         Excl_wri(worksheet, num_1, 5, '推断为：' + str)
 ```
-###6.Patch_Of_Dep
+### 6.Patch_Of_Dep
 ```python3
 # 对科室的补丁处理，同样推荐生成本地字典
 def Patch_Of_Dep(text, i):
@@ -300,7 +300,7 @@ def Patch_Of_Dep(text, i):
                 text.append((str, 'n'))
         return text
 ```
-###7.func_Get_Dep_2
+### 7.func_Get_Dep_2
 ```python3
 # 倒序遍历，提取科室方法，并且自上而下增强逻辑——可能会有误判，需要不断补充停止关键字，同样推荐生成本地字典
 # 入口参数为text，出口参数为list
@@ -353,7 +353,7 @@ def func_Get_Dep_2(text):
         i = i - 1
     return List_k
 ```
-###8.func_Processor
+### 8.func_Processor
 ```python3
 # 提取“类科”方法，入口参数为text及表格写入列num，返回值为字符串
 # 此处不把学院作为科室，该方法为增强逻辑——正则匹配，而非一一对应，会产生过强的情况，需要在反复测试中打补丁
@@ -397,15 +397,15 @@ def func_Infer_Dep_2(text, num):
         return ''
 ```
 
-##并行化、改进及维护
-###1.并行化
+## 并行化、改进及维护
+### 1.并行化
 目前暂时不建议使用并行化处理，由于应用环境——windows系统，并行处理时，进程创建成本较高，相关脚本开发尚未通过测试，完成后会更新本文档
-###2.改进
+### 2.改进
 源文件（[Fun_1.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_1.py))中对于需要增加与否停用词等已做注释，后期也会更新本文档进行详细说明
-###3.维护
+### 3.维护
 不建议修改除文件路径，停用词以外的任何内容，以免造成不可估计的逻辑错误
 
-##文件说明
+## 文件说明
 1. [Fun_1.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_1.py)
 字符串处理主函数，程序完整功能及应用
 2. [Fun_2_Excl.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_2_Excl.py)
@@ -425,7 +425,7 @@ pkuseg小范围分词单独测试
 9. [Actual_Demo_1.xlsx](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/Excel/Actual_Demo_1.xlsx)
 基于7的输出结果
 
-##写在最后
+## 写在最后
 此为本程序README文档的1.1版本，后续会持续更新，下次更新预计解决：
 本地字典生成实例文档及并行化接口
 
