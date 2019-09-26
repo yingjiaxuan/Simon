@@ -412,10 +412,10 @@ def func_Infer_Dep_2(text, num):
 Excel文档相关处理方法参考
 3. [Fun_3.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_3.py)
 pkuseg小范围分词单独测试
-4. [fun_4.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/fun_4.py)
-并行模块开发（待优化，目前处于无法运行状态）
+4. [Test_Parallel.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Test_Parallel.py)
+并行模块开发（已完成）
 5. [Fun_5.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_5.py)
-并行原理模块参考
+并行原理模块参考，已弃用，仅用作留档
 6. [Fun_6.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_6.py)
 进程池方法实现并行方法测试
 7. [Address.xlsx](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/Excel/Address.xlsx)
