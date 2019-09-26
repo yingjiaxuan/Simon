@@ -22,7 +22,7 @@ def fun_Parallel_fun(a, b, df):
         row_loop = row_loop + 1
 
     t = str(a) + '_' + str(b) + '.xlsx'
-    t = 'C:\Personal_File\DiskF\GSK_Intern_Another\-file\Cn\QAQ_' + t
+    t = 'url' + t
     df_goal.to_excel(t, sheet_name='Sheet1', index=False, header=True)
 
 
@@ -41,7 +41,7 @@ if __name__ == '__main__':
 
     startTime = time.time()
 
-    t = 'C:\Personal_File\DiskF\GSK_Intern_Another\-file\Cn\Trouble_Cn_0_443852.xlsx'  # 开文件，录入
+    t = 'url'  # 开文件，录入
     df = pd.read_excel(t, sheet_name="Sheet1")
     row_num, column_num = df.shape
     print("获取完成")
