@@ -399,7 +399,8 @@ def func_Infer_Dep_2(text, num):
 
 ## 并行化、改进及维护
 ### 1.并行化
-目前暂时不建议使用并行化处理，由于应用环境——windows系统，并行处理时，进程创建成本较高，相关脚本开发尚未通过测试，完成后会更新本文档
+已完成并行化模块（[Test_Parallel.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Test_Parallel.py)）
+需要使用python第三方库pp（parallel python），相关说明文档将于近期完成
 ### 2.改进
 源文件（[Fun_1.py](https://github.com/yingjiaxuan/Simon/blob/GSK_Intern/GSK_Module_1/Fun_1.py))中对于需要增加与否停用词等已做注释，后期也会更新本文档进行详细说明
 ### 3.维护
