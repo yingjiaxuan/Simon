@@ -1,6 +1,9 @@
 # 基于pkuseg的GSK医疗领域中文分词
 此程序相对偏脚本，以下将分几个方面进行叙述
 
+You can the English Version of README by [**CLicking**](https://github.com/yingjiaxuan/Simon/blob/master/README_En.md)
+
+
 
 
 
