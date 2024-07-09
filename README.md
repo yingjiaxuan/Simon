@@ -1,7 +1,7 @@
 # 基于pkuseg的GSK医疗领域中文分词
 此程序相对偏脚本，以下将分几个方面进行叙述
 
-You can the English Version of README by [**CLicking**](https://github.com/yingjiaxuan/Simon/blob/master/README_En.md)
+You can the English Version of README by [**Clicking**](https://github.com/yingjiaxuan/Simon/blob/master/README_EN.md)
 
 
 
@@ -429,10 +429,8 @@ pkuseg小范围分词单独测试
 基于7的输出结果
 
 ## 写在最后
-此为本程序README文档的2.0版本，后续会持续更新，下次更新预计解决：
-并行化接口的使用说明
 
-有任何关于本程序的问题及建议，欢迎将邮件发至：[*yingjiaxuan123@163.com*](link)
+有任何关于本程序的问题及建议，欢迎将邮件发至：[*yingjiaxuan123@gmail.com*](link)
 
 
 
